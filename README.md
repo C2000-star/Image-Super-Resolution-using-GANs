@@ -89,7 +89,6 @@ logging:
 
 `train_dataset/detect_blur`: filter blurry images in the training dataset
 
-`refgan`: provide reference image to the discriminator network
 
 Explanation of *config* files:
 - `esrgan.yaml`: baseline ESRGAN (configuration(c))
@@ -129,14 +128,10 @@ Four trained models are included in the repository in `./weights/*`.
 
 The colab notebook with the required implementation and results is in the folder `\notebooks\`
 
-#StyleGAN for super resolution
+# StyleGAN for super resolution
 
 ### Super Resolution
 Given a low-resolution input image, we generate a corresponding high-resolution image. As this too is an ambiguous task, we can use style-mixing to produce several plausible results.
-<p align="center">
-<img src="docs/super_res_32.jpg" width="800px"/>
-<img src="docs/super_res_style_mixing.jpg" width="800px"/>
-</p>
 
 
 ## Getting Started
@@ -150,21 +145,13 @@ We recommend running this repository using [Anaconda](https://docs.anaconda.com/
 All dependencies for defining the environment are provided in `environment/psp_env.yaml`.
 
 ### Inference Notebook
-To help visualize the pSp framework on multiple tasks and to help you get started, we provide a Jupyter notebook found in `notebooks/inference_playground.ipynb` that allows one to visualize the various applications of pSp.   
-The notebook will download the necessary pretrained models and run inference on the images found in `notebooks/images`.  
+To help visualize the StyleGAN framework on multiple tasks and to help you get started, we provide a Jupyter notebook found in `notebooks/inference_playground.ipynb` that allows one to visualize the various applications of pSp.   
+The notebook will download the necessary pretrained models and run inference on the images found in `notebooks/test data`.  
 For the tasks of conditional image synthesis and super resolution, the notebook also demonstrates pSp's ability to perform multi-modal synthesis using 
 style-mixing. 
 
 ### Pretrained Models
-Please download the pre-trained models from the following links. Each pSp model contains the entire pSp architecture, including the encoder and decoder weights.
-| Path | Description
-| :--- | :----------
-|[StyleGAN Inversion](https://drive.google.com/file/d/1bMTNWkh5LArlaWSc_wa8VKyq2V42T2z0/view?usp=sharing)  | pSp trained with the FFHQ dataset for StyleGAN inversion.
-|[Face Frontalization](https://drive.google.com/file/d/1_S4THAzXb-97DbpXmanjHtXRyKxqjARv/view?usp=sharing)  | pSp trained with the FFHQ dataset for face frontalization.
-|[Sketch to Image](https://drive.google.com/file/d/1lB7wk7MwtdxL-LL4Z_T76DuCfk00aSXA/view?usp=sharing)  | pSp trained with the CelebA-HQ dataset for image synthesis from sketches.
-|[Segmentation to Image](https://drive.google.com/file/d/1VpEKc6E6yG3xhYuZ0cq8D2_1CbT0Dstz/view?usp=sharing) | pSp trained with the CelebAMask-HQ dataset for image synthesis from segmentation maps.
-|[Super Resolution](https://drive.google.com/file/d/1ZpmSXBpJ9pFEov6-jjQstAlfYbkebECu/view?usp=sharing)  | pSp trained with the CelebA-HQ dataset for super resolution (up to x32 down-sampling).
-|[Toonify](https://drive.google.com/file/d/1YKoiVuFaqdvzDP5CZaqa3k5phL-VDmyz/view)  | pSp trained with the FFHQ dataset for toonification using StyleGAN generator from [Doron Adler](https://linktr.ee/Norod78) and [Justin Pinkney](https://www.justinpinkney.com/).
+
 
 If you wish to use one of the pretrained models for training or inference, you may do so using the flag `--checkpoint_path`.
 
